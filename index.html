@@ -20,7 +20,6 @@
                                 background-repeat: no-repeat; \
                                 background-size: contain; \
                                 background-position: center;";
-                                alert(orientation);
 
           if (orientation == 0) {
             if (body.clientWidth < 4 * body.clientHeight) {
@@ -37,9 +36,7 @@
           } else {
               body.style.backgroundImage = "url('landscape.png')";
               body.style.backgroundColor = "#3b68cc";
-          }
-            
-          
+          }  
         }) ();
 
         (function () {
