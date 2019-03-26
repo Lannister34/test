@@ -20,18 +20,26 @@
                                 background-repeat: no-repeat; \
                                 background-size: contain; \
                                 background-position: center;";
-                                alert(screen.width + ' ' + screen.height + ' ' + outerWidth  + ' ' + outerHeight + ' ' +  
-                                      innerWidth + ' ' +  innerHeight + ' ' +  body.clientWidth + ' ' +  body.clientHeight);
+                                alert(orientation);
 
-
-          if (orientation == 'portrait-primary' || orientation == 'portrait-secondary' ||
-                              orientation == 0 || orientation == 180) {
+          if (orientation == 0) {
+            if (screen.width == outerWidth) {
+                body.style.backgroundImage = "url('portrait.png')";
+                body.style.backgroundColor = "#40bb63";  
+            } else {
+                body.style.backgroundImage = "url('landscape.png')";
+              body.style.backgroundColor = "#3b68cc";
+            }
+          } else if (orientation == 'portrait-primary' || orientation == 'portrait-secondary' 
+                     || orientation == 180) {
             body.style.backgroundImage = "url('portrait.png')";
             body.style.backgroundColor = "#40bb63";
           } else {
               body.style.backgroundImage = "url('landscape.png')";
               body.style.backgroundColor = "#3b68cc";
           }
+            
+          
         }) ();
 
         (function () {
@@ -40,15 +48,23 @@
             const body = document.body;
             const orientation = screen.msOrientation || screen.mozOrientation ||
                                 (screen.orientation || {}).type || window.orientation;
-
-              if (orientation == 'portrait-primary' || orientation == 'portrait-secondary' ||
-                                  orientation == 0 || orientation == 180) {
-              body.style.backgroundImage = "url('portrait.png')";
-              body.style.backgroundColor = "#40bb63";
+            alert(orientation);
+              if (orientation == 0) {
+            if (screen.width == outerWidth) {
+                body.style.backgroundImage = "url('portrait.png')";
+                body.style.backgroundColor = "#40bb63";  
             } else {
                 body.style.backgroundImage = "url('landscape.png')";
-                body.style.backgroundColor = "#3b68cc";
+              body.style.backgroundColor = "#3b68cc";
             }
+          } else if (orientation == 'portrait-primary' || orientation == 'portrait-secondary' 
+                     || orientation == 180) {
+            body.style.backgroundImage = "url('portrait.png')";
+            body.style.backgroundColor = "#40bb63";
+          } else {
+              body.style.backgroundImage = "url('landscape.png')";
+              body.style.backgroundColor = "#3b68cc";
+          }
           }, false);
         }) ();
 
