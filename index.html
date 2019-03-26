@@ -47,7 +47,7 @@
                                 (screen.orientation || {}).type || window.orientation;
             
               if (orientation == 0) {
-            if (screen.width == outerWidth) {
+            if (body.clientWidth < 4 * body.clientHeight) {
                 body.style.backgroundImage = "url('portrait.png')";
                 body.style.backgroundColor = "#40bb63";  
             } else {
