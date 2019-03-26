@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'/>
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+      <script>
+        (function () {
+          const body = document.body;
+          const html = document.querySelector('html');
+          const orientation = screen.msOrientation || screen.mozOrientation ||
+                              (screen.orientation || {}).type || window.orientation;
+
+          html.style.cssText = "width: 100%; \
+                                height: 100%;";
+          body.style.cssText = "width: 100%; \
+                                height: 100%; \
+                                margin: 0; \
+                                background-repeat: no-repeat; \
+                                background-size: contain; \
+                                background-position: center;";
+                                alert(screen.height);
+          if (orientation == 'portrait-primary' || orientation == 'portrait-secondary' ||
+                              orientation == 0 || orientation == 180) {
+            body.style.backgroundImage = "url('portrait.png')";
+            body.style.backgroundColor = "#40bb63";
+          } else {
+              body.style.backgroundImage = "url('landscape.png')";
+              body.style.backgroundColor = "#3b68cc";
+          }
+        }) ();
+
+        (function () {
+          window.addEventListener("resize", function () {
+
+            const body = document.body;
+            const orientation = screen.msOrientation || screen.mozOrientation ||
+                                (screen.orientation || {}).type || window.orientation;
+
+              if (orientation == 'portrait-primary' || orientation == 'portrait-secondary' ||
+                                  orientation == 0 || orientation == 180) {
+              body.style.backgroundImage = "url('portrait.png')";
+              body.style.backgroundColor = "#40bb63";
+            } else {
+                body.style.backgroundImage = "url('landscape.png')";
+                body.style.backgroundColor = "#3b68cc";
+            }
+          }, false);
+        }) ();
+
+
+
+      </script>
+    </body>
+</html>
